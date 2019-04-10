@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 策略模式的意图是封装算法，让算法独立，并且之间可以相互，让行为的变化独立于拥有行为的客户。
+ */
 class Strategy {
     companion object {
         @JvmStatic
