@@ -9,6 +9,7 @@ class AbstractFactory {
             val plantFactory = PlantFactory.createFactory<OrangePlant>()
             val plant = plantFactory.makePlant()
             println("Created plant: $plant")
+            println("Created plant: ${PlantFactory.createFactory<ApplePlant>().makePlant()}")
         }
     }
 }
