@@ -1,5 +1,8 @@
 package com.ccooy.patterns.creational
 
+/**
+ * 工厂方法模式
+ */
 class FactoryMethod {
     companion object {
         @JvmStatic

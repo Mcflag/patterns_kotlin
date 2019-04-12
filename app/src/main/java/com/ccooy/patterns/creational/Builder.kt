@@ -2,6 +2,9 @@ package com.ccooy.patterns.creational
 
 import java.io.File
 
+/**
+ * 建造者模式，写法有稍微用到DSL构建方法
+ */
 class Builder {
     companion object {
         @JvmStatic

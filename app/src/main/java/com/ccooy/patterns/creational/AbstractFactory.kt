@@ -2,6 +2,9 @@ package com.ccooy.patterns.creational
 
 import java.lang.IllegalArgumentException
 
+/**
+ * 抽象工厂模式
+ */
 class AbstractFactory {
     companion object {
         @JvmStatic
