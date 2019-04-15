@@ -1,5 +1,9 @@
 package com.ccooy.patterns.creational
 
+/**
+ * 原型模式，用Java的思路写kotlin的实现
+ * 实际上没有必要，直接使用data class即可实现原型模式。
+ */
 class Prototype {
     companion object {
         @JvmStatic

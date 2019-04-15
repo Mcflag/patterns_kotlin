@@ -1,5 +1,8 @@
 package com.ccooy.patterns.structural
 
+/**
+ * 装饰模式，还可以直接使用扩展函数实现。
+ */
 class Decorator {
     companion object {
         @JvmStatic

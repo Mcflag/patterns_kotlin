@@ -1,5 +1,8 @@
 package com.ccooy.patterns.structural
 
+/**
+ * 桥接模式
+ */
 class Bridge {
     companion object {
         @JvmStatic

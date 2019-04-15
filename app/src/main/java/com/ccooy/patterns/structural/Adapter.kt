@@ -2,6 +2,9 @@ package com.ccooy.patterns.structural
 
 import java.math.BigDecimal
 
+/**
+ * 适配器模式
+ */
 class Adapter {
     companion object {
         @JvmStatic

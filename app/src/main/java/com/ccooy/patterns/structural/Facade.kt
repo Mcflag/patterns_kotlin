@@ -1,5 +1,8 @@
 package com.ccooy.patterns.structural
 
+/**
+ * 外观模式
+ */
 class Facade {
     companion object {
         @JvmStatic

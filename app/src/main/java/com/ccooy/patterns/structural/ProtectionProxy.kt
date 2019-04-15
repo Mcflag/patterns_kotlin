@@ -1,5 +1,8 @@
 package com.ccooy.patterns.structural
 
+/**
+ * 代理模式
+ */
 class ProtectionProxy {
     companion object {
         @JvmStatic
