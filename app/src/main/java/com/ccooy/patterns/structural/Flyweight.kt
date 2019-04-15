@@ -2,6 +2,9 @@ package com.ccooy.patterns.structural
 
 import java.util.*
 
+/**
+ * 享元模式
+ */
 class Flyweight {
     companion object {
         private val colors = arrayOf("Red", "Green", "Blue", "White", "Black")

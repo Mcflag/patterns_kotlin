@@ -1,5 +1,8 @@
 package com.ccooy.patterns.structural
 
+/**
+ * 组合模式
+ */
 class CompositeTest {
     companion object {
         @JvmStatic

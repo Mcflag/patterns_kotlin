@@ -1,5 +1,8 @@
 package com.ccooy.patterns.structural
 
+/**
+ * 过滤器模式
+ */
 class Filter {
     companion object {
         @JvmStatic

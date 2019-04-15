@@ -2,6 +2,9 @@ package com.ccooy.patterns.behavioral
 
 import java.lang.IllegalStateException
 
+/**
+ * 职责链模式
+ */
 interface HeadersChain {
     fun addHeader(inputHeader: String): String
 }
