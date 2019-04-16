@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 解释器模式
+ */
 class Interpreter {
     companion object {
         val maleExpression = OrExpression(TerminalExpression("Robert"), TerminalExpression("John"))

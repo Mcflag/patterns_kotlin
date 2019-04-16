@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 状态模式
+ */
 class State {
     companion object {
         @JvmStatic

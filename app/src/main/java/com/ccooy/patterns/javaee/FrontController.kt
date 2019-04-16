@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 前端控制器模式
+ */
 class FrontControllerTest {
     companion object {
         @JvmStatic

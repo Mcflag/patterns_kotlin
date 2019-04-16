@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 模板模式
+ */
 class Template {
     companion object {
         @JvmStatic

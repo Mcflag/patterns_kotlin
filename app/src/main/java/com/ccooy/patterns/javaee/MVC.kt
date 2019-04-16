@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * MVC模式
+ */
 class MVC {
     companion object {
         @JvmStatic

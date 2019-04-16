@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 迭代器模式
+ */
 class IteratorPattern {
     companion object {
         @JvmStatic

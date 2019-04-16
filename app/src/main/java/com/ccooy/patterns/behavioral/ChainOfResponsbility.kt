@@ -1,7 +1,5 @@
 package com.ccooy.patterns.behavioral
 
-import java.lang.IllegalStateException
-
 /**
  * 职责链模式
  */

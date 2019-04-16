@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 拦截过滤器模式
+ */
 class InterceptionFilter {
     companion object {
         @JvmStatic

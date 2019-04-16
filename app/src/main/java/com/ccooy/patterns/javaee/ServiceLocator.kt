@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 服务定位器模式
+ */
 class ServiceLocatorTest {
     companion object {
         @JvmStatic

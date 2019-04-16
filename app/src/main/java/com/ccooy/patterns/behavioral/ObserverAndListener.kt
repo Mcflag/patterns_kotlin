@@ -2,6 +2,9 @@ package com.ccooy.patterns.behavioral
 
 import kotlin.properties.Delegates
 
+/**
+ * 观察者模式
+ */
 class ObserverAndListener {
     companion object {
         @JvmStatic

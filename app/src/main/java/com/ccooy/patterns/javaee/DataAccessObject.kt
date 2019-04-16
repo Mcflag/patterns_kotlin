@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 数据访问对象模式
+ */
 class DataAccessObject {
     companion object {
         @JvmStatic

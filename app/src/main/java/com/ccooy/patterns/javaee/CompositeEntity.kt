@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 组合实体模式
+ */
 class CompositeEntityTest {
     companion object {
         @JvmStatic

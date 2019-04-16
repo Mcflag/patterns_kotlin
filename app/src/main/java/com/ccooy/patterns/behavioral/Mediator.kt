@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 中介者模式
+ */
 class Mediator {
     companion object {
         @JvmStatic

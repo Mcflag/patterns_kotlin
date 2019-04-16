@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 传输对象模式
+ */
 class TransferObjectTest {
     companion object {
         @JvmStatic

@@ -1,5 +1,8 @@
 package com.ccooy.patterns.javaee
 
+/**
+ * 业务代表模式
+ */
 class BusinessDelegateTest {
     companion object {
         @JvmStatic

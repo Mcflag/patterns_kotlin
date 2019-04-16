@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 访问者模式
+ */
 class Visitor {
     companion object {
         @JvmStatic

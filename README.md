@@ -136,3 +136,155 @@
 
 #### 3.2 命令模式
 
+将请求以一个一个命令的方式封装在对象中，并传给调用对象，对请求排队以及记录请求日志，以及支持可撤销的操作。
+
+#### 3.3 解释器模式
+
+解释器模式是定义一个语言的文法，并且建立一个解释器来解释该语言中的语句，比如SQL语言。
+
+应用的场景比较少。
+
+#### 3.4 迭代器模式
+
+迭代器模式提供一种遍历聚合对象中的元素的一种方式，而又无需暴露该对象的内部表示。
+
+Kotlin中定义iterator迭代器函数即可，或者自己定义一个迭代器，包含next()和hasNext()方法。
+
+    class Sentence(val words: List<String>)
+    operator fun Sentence.iterator(): Iterator<String> = words.iterator()
+
+#### 3.5 中介者模式
+
+中介者模式用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使耦合松散，且能够独立改变之间的交互。
+
+主要解决的是多个类相互耦合形成了网状结构，中介者模式可以将网状结构分离为星型结构。
+
+但是需要在职责清晰的时候使用，如果职责混乱，必定难以封装成中介者。
+
+#### 3.6 备忘录模式
+
+备忘录模式是在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先的状态。
+
+实际使用时为了符合迪米特原则，还需要一个管理备忘录的类，并且可以将原型模式和备忘录模式结合起来使用。
+
+#### 3.7 观察者模式
+
+观察者模式是一个对象状态发生变化后，可以立即通知已订阅的另一个对象。
+
+Kotlin中有observable properties简化实现。
+
+    interface TextChangedListener {
+        fun onTextChanged(newText: String)
+    }
+    class TextView {
+        var listener: TextChangedListener? = null
+        val text:String by Delegates.observable("") { prop, old, new ->
+            listener?.onTextChanged(new)
+        }
+    }
+    
+#### 3.8 状态模式
+
+状态模式是将一个对象在不同状态下的不同行为封装在一个个状态类中，通过设置不同的状态可以让对象拥有不同的行为。
+
+在行为受状态约束的情况下使用状态模式，状态最好不要太多。
+
+#### 3.9 策略模式
+
+策略模式用于算法的切换和扩展，分离算法的定义和实现。
+
+Kotlin中可以使用高阶函数作为算法的抽象。
+
+    class Customer(val name: String, val fee: Double, val discount: (Double)->Double) {
+        fun pricePerMonth() = discount(fee)
+    }
+    val studentDiscount = {fee: Double -> fee/2}
+    val noDiscount = {fee: Double -> fee}
+    
+    val student = Customer("Ned", 10.0, studentDiscount)
+    
+#### 3.10 模板方法模式
+
+模板方法模式定义一个模板方法来定义算法框架，而某些具体步骤的实现在其子类中完成。
+
+Kotlin中可以使用高阶函数可以避免继承的方式。
+
+    class Task{
+        fun play(initialize: ()->Unit, startPlay: ()->Unit, endPlay: ()->Unit){
+            initialize()
+            startPlay()
+            endPlay()
+        }
+        
+        fun initialize(){ //TODO }
+        fun startPlay(){ //TODO }
+        fun endPlay(){ //TODO }
+    }
+    
+#### 3.11 访问者模式
+
+访问者模式提供一个访问者类，改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。
+
+被访问者里提供一个方法接收访问者，并将自身引用传入访问者。
+
+    interface Employee{ fun accept(visitor: Visitor) }
+    interface Visitor{
+        fun visit(ge: GeneralEmployee)
+        fun visit(me: ManagerEmployee)
+    }
+    class GemeralEmployee(val wage: Int):Employee{
+        override fun accept(visitor:Visitor) = visitor.visit(this)
+    }
+    class ManagerEmployee(val wage: Int, val bonus: Int):Employee{
+        override fun accept(visitor:Visitor) = visitor.visit(this)
+    }
+    class FADVisitor:Visitor{
+        override fun visit(ge: GeneralEmployee){
+            println("GeneralEmployee wage:${ge.wage}")
+        }
+        override fun visit(me: ManagerEmployee){
+            println("ManagerEmployee wage:${me.wage + me.bonus}")
+        }
+    }
+    
+### 4 JavaEE模式
+
+主要是一些关注表示层的设计模式。
+
+#### 4.1 MVC模式
+
+MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。
+
+#### 4.2 业务代表模式
+
+它的做法是一个业务代表类提供对所有业务服务的查询和分配操作的模式。
+
+它基本上是用来减少通信或对表示层代码中的业务层代码的远程查询功能。
+
+#### 4.3 组合实体模式
+
+本质是把多个实体组合成一个单一的实体。
+
+#### 4.4 数据访问对象模式
+
+数据访问对象就是DAO，也就是把低级的数据访问 API 或操作从高级的业务服务中分离出来。
+
+#### 4.5 前端控制器模式
+
+是用来提供一个集中的请求处理机制，所有的请求都将由一个单一的处理程序处理。
+
+该处理程序可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。
+
+#### 4.6 拦截过滤器模式
+
+用于对应用程序的请求或响应做一些预处理/后处理。定义过滤器，并在把请求传给实际目标应用程序之前应用在请求上。
+
+过滤器可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。
+
+#### 4.7 服务定位器模式
+
+利用缓存，加快服务定位的模式。如果第一次请求服务，则去查找服务并缓存该服务对象。再次请求时直接从缓存中查找。
+
+#### 4.8 传输对象模式
+
+实际上就是传输POJO对象的方式。

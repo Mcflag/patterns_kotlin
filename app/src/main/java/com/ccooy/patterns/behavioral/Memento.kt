@@ -1,5 +1,8 @@
 package com.ccooy.patterns.behavioral
 
+/**
+ * 备忘录模式
+ */
 class Memento {
     companion object {
         @JvmStatic
